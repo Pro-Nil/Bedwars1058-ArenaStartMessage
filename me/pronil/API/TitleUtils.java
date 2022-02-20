@@ -56,7 +56,7 @@ class TitleUtils {
             sendToPlayer.invoke(connection, packet);
         }
         catch (Exception e) {
-            System.out.println("An problem occurred during sending clear title packet (Problema ocorrido ao enviar packet de limpar titulo)");
+            System.out.println("An problem occurred during sending clear title packet ");
         }
     }
 
@@ -73,7 +73,7 @@ class TitleUtils {
             sendToPlayer.invoke(connection, packet);
         }
         catch (Exception e) {
-            System.out.println("An problem occurred during sending reset title packet (Problema ocorrido ao enviar packet de reset de titulo)");
+            System.out.println("An problem occurred during sending reset title packet ");
         }
     }
 
@@ -113,7 +113,7 @@ class TitleUtils {
         }
         catch (Exception e) {
             e.printStackTrace();
-            System.out.println("An problem occurred during sending title packet (Problema ocorrido ao enviar packet de titulo)");
+            System.out.println("An problem occurred during sending title packet");
         }
     }
 
