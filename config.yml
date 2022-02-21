@@ -1,6 +1,0 @@
-minPlayers: 1
-minPlayersPassedText: "&b⮞ A &e&lBedWars {arenagroup} &bgame in arena &e&l{arena}&b is waiting &bfor more players to start! &6&lCLICK HERE &bto join!"
-minPlayersPassedTulip: "&a&lLEFT CLICK TO JOIN!"
-arenaStartingText: "&b⮞ A &e&lBedWars {arenagroup} &bgame in arena &e&l{arena}&b is about to &bstart! &6&lCLICK HERE &bto join!"
-arenaStartingTulip: "&a&lLEFT CLICK TO JOIN!"
-lobbyWorldName: "world"
