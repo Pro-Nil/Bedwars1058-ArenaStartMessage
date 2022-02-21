@@ -25,9 +25,9 @@ Images : 
 -Supports-
 
 
-*Support Server Types: Muliarena, Shared, Bungee
-*Support Server Softwares: Spigot , Paper
-*Supports Server Versions: 1.8.x - 1.18.x
+*Support Server Types: Muliarena, Shared, Bungee \n
+*Support Server Softwares: Spigot , Paper \n
+*Supports Server Versions: 1.8.x - 1.18.x \n
 
 
 
