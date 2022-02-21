@@ -1,4 +1,5 @@
 # Bedwars1058-ArenaStartMessage
+### BedWars1058 Addon which allows you to send Arena Join Notification to the players in lobby .
 
 
 
