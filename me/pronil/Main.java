@@ -5,23 +5,26 @@ import me.pronil.BedWars.BedwarsArenaStartMessageBW;
 import me.pronil.BedWars.BedwarsArenaStartMessageBWP;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main
         extends JavaPlugin {
+    public static Main getPlugins() {
+        return JavaPlugin.getPlugin(Main.class);
+    }
+    public static Main instance;
+    String pluginName = "Bedwars1058-ArenaStartMessage";
+    String pluginVersion = getDescription().getVersion();
     private static Plugin plugin;
-    public static FileConfiguration config;
 
     public void onEnable() {
+        instance = this;
         plugin = this;
-        this.saveDefaultConfig();
-        config = this.getConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
         initHooks();
-
-
     }
     public boolean isBedWars1058Present() {
         return Bukkit.getPluginManager().getPlugin("BedWars1058") != null;
@@ -37,9 +40,9 @@ public class Main
             pm.registerEvents(new BedwarsArenaStartMessageBW(), this);
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("-------------");
+            Bukkit.getConsoleSender().sendMessage("--------------------------------------------------------------------");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("BedWars1058-ArenaStartMessage");
+            Bukkit.getConsoleSender().sendMessage(this.pluginName + " v" + this.pluginVersion);
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage("Successfully Loaded");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
@@ -47,7 +50,9 @@ public class Main
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage("Author - Pro_Nil");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("-------------");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Running Java &f" + System.getProperty("java.version")));
+            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Running &f" + Bukkit.getServer().getName() + " &7fork &fv" + Bukkit.getServer().getBukkitVersion()));
+            Bukkit.getConsoleSender().sendMessage("--------------------------------------------------------------------");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
 
@@ -56,9 +61,9 @@ public class Main
             pm.registerEvents(new BedwarsArenaStartMessageBWP(), this);
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("-------------");
+            Bukkit.getConsoleSender().sendMessage("--------------------------------------------------------------------");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("BedWars1058-ArenaStartMessage");
+            Bukkit.getConsoleSender().sendMessage(this.pluginName + " v" + this.pluginVersion);
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage("Successfully Loaded");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
@@ -66,7 +71,9 @@ public class Main
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage("Author - Pro_Nil");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
-            Bukkit.getConsoleSender().sendMessage("-------------");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Running Java &f" + System.getProperty("java.version")));
+            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&7Running &f" + Bukkit.getServer().getName() + " &7fork &fv" + Bukkit.getServer().getBukkitVersion()));
+            Bukkit.getConsoleSender().sendMessage("--------------------------------------------------------------------");
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&r "));
 
@@ -80,7 +87,9 @@ public class Main
 
 
         }
+
   public static Plugin getPlugin() {
     return plugin;
-}}
- 
+}
+
+    }
