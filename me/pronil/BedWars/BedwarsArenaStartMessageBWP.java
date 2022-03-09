@@ -1,4 +1,3 @@
-
 package me.pronil.BedWars;
 
 
@@ -49,17 +48,16 @@ public class BedwarsArenaStartMessageBWP
                         addon.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/bw join " + ArenaName.toLowerCase() + arena));
                         addon.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder(minPlayersPassedTulip.replace("{arena}", ArenaName).replace("{arenagroup}", ArenaGroup))).create()));
                         for (Player player : Bukkit.getOnlinePlayers()) {
-                        if (player.getWorld() == Lobby)
-                                    player.sendMessage(" ");
+                            if (player.getWorld() == Lobby)
+                                player.sendMessage(" ");
                             player.spigot().sendMessage((BaseComponent)addon);
                             if (sound.equalsIgnoreCase("true")){
                                 player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);}
-                                    player.sendMessage(" ");
-                                }
+                        }
                     }
                 }.runTaskLater(Main.getPlugin(), 10L);
             }
-            } else if (ArenaStatus == com.andrei1058.bedwars.proxy.api.ArenaStatus.STARTING) {
+        } else if (ArenaStatus == com.andrei1058.bedwars.proxy.api.ArenaStatus.STARTING) {
             new BukkitRunnable(){
 
                 public void run() {
@@ -73,8 +71,7 @@ public class BedwarsArenaStartMessageBWP
                             player.sendMessage(" ");
                         player.spigot().sendMessage((BaseComponent)addon);
                         if (sound.equalsIgnoreCase("true")){
-                        player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);}
-                        player.sendMessage(" ");
+                            player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);}
                     }
                 }}.runTaskLater(Main.getPlugin(), 10L);
         }
