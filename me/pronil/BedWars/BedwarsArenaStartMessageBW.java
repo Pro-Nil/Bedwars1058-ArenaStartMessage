@@ -27,6 +27,7 @@ public class BedwarsArenaStartMessageBW
     String minPlayersPassedTulip = this.config.getString("minPlayersPassedTulip").replaceAll("&", "§");
     String arenaStartingText = this.config.getString("arenaStartingText").replaceAll("&", "§");
     String arenaStartingTulip = this.config.getString("arenaStartingTulip").replaceAll("&", "§");
+    String sound = this.config.getString("play-sound");
     String lobbyWorld = this.config.getString("lobbyWorldName").trim();
 
 
@@ -48,12 +49,13 @@ public class BedwarsArenaStartMessageBW
                         addon.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/bw join " + ArenaName.toLowerCase() + arena));
                         addon.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder(minPlayersPassedTulip.replace("{arena}", ArenaName).replace("{arenagroup}", ArenaGroup))).create()));
                         for (Player player : Bukkit.getOnlinePlayers()) {
-                            if (player.getWorld() == Lobby)
+                            if (player.getWorld() == Lobby) {
                                 player.sendMessage(" ");
-                            player.spigot().sendMessage((BaseComponent)addon);
-                            player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);
-                            player.sendMessage(" ");
-                        }
+                                player.spigot().sendMessage((BaseComponent) addon);
+                                if (sound.equalsIgnoreCase("true")) {
+                                    player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);
+                                }
+                            } }
 
                     }
                 }.runTaskLater(Main.getPlugin(), 10L);
@@ -68,12 +70,12 @@ public class BedwarsArenaStartMessageBW
                     addon.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder(arenaStartingTulip.replace("{arena}", ArenaName).replace("{arenagroup}", ArenaGroup))).create()));
 
                     for (Player player : Bukkit.getOnlinePlayers()) {
-                        if (player.getWorld() == Lobby)
+                        if (player.getWorld() == Lobby){
                             player.sendMessage(" ");
                         player.spigot().sendMessage((BaseComponent)addon);
-                        player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);
-                        player.sendMessage(" ");
-                    }
+                        if (sound.equalsIgnoreCase("true")){
+                            player.playSound(player.getLocation(), Sound.valueOf(file.getString("Sound")), 10.0F, 10.0F);}
+                    }}
                 }}.runTaskLater(Main.getPlugin(), 10L);
         }
     }
