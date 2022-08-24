@@ -3,6 +3,5 @@ minPlayersPassedText: "&b⮞ A &e&lBedWars {arenagroup} &bgame in arena &e&l{are
 minPlayersPassedTulip: "&a&lLEFT CLICK TO JOIN!"
 arenaStartingText: "&b⮞ A &e&lBedWars {arenagroup} &bgame in arena &e&l{arena}&b is about to &bstart! &6&lCLICK HERE &bto join!"
 arenaStartingTulip: "&a&lLEFT CLICK TO JOIN!"
-lobbyWorldName: "world"
 play-sound: true
 Sound: "LEVEL_UP" #this is 1.8 sound
